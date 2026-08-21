@@ -20,10 +20,10 @@ interface Result {
 // text report you need to keep searchable.
 async function compressPdf(file: File, quality: number): Promise<{ blob: Blob; grew: boolean }> {
   const pdfjsLib = await import("pdfjs-dist");
-  // See scripts/copy-pdf-worker.js — the worker is copied into /public at
-  // install time and served as a plain static file so Next's build never
-  // has to parse its ES module syntax.
-  pdfjsLib.GlobalWorkerOptions.workerSrc = "/pdf.worker.min.mjs";
+  // Loaded from a CDN, matched to the installed pdfjs-dist version — see
+  // the matching comment in PdfToJpgClient.tsx for why a local reference
+  // keeps breaking the production build.
+  pdfjsLib.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjsLib.version}/pdf.worker.min.mjs`;
 
   const originalBytes = await file.arrayBuffer();
   const pdf = await pdfjsLib.getDocument({ data: originalBytes }).promise;
