@@ -20,10 +20,10 @@ interface Result {
 // text report you need to keep searchable.
 async function compressPdf(file: File, quality: number): Promise<{ blob: Blob; grew: boolean }> {
   const pdfjsLib = await import("pdfjs-dist");
-  pdfjsLib.GlobalWorkerOptions.workerSrc = new URL(
-    "pdfjs-dist/build/pdf.worker.min.mjs",
-    import.meta.url
-  ).toString();
+  // See scripts/copy-pdf-worker.js — the worker is copied into /public at
+  // install time and served as a plain static file so Next's build never
+  // has to parse its ES module syntax.
+  pdfjsLib.GlobalWorkerOptions.workerSrc = "/pdf.worker.min.mjs";
 
   const originalBytes = await file.arrayBuffer();
   const pdf = await pdfjsLib.getDocument({ data: originalBytes }).promise;

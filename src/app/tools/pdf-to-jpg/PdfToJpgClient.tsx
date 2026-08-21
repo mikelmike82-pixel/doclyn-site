@@ -35,10 +35,13 @@ export function PdfToJpgClient() {
       // Loaded dynamically so the (fairly large) PDF rendering engine only
       // ships to people who actually open this tool.
       const pdfjsLib = await import("pdfjs-dist");
-      pdfjsLib.GlobalWorkerOptions.workerSrc = new URL(
-        "pdfjs-dist/build/pdf.worker.min.mjs",
-        import.meta.url
-      ).toString();
+      // The worker file is copied into /public at install time (see
+      // scripts/copy-pdf-worker.js) and served as a plain static file here,
+      // rather than referenced via new URL(..., import.meta.url) — that
+      // pattern makes Next's build try to bundle/parse the worker's ES
+      // module syntax and fails with a build error. A plain string path to
+      // /public is never parsed by the bundler at all.
+      pdfjsLib.GlobalWorkerOptions.workerSrc = "/pdf.worker.min.mjs";
 
       const data = await file.arrayBuffer();
       const pdf = await pdfjsLib.getDocument({ data }).promise;

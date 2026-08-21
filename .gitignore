@@ -5,3 +5,7 @@ out
 .vercel
 *.log
 .DS_Store
+
+# Copied fresh into /public by the postinstall script (scripts/copy-pdf-worker.js)
+# on every install, including on Vercel's build servers — never commit it.
+/public/pdf.worker.min.mjs
