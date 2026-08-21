@@ -37,6 +37,13 @@ export const metadata: Metadata = {
     siteName: "Doclyn",
     type: "website",
   },
+  verification: {
+    // Confirms ownership of doclyn.me to Google Search Console — lets Google
+    // know the sitemap exists and starts crawling. Next.js renders this into
+    // a <meta name="google-site-verification" ...> tag in the page <head>
+    // automatically; no need to hand-write the tag itself.
+    google: "OhobcD8xSej4oXHJElrvxPmjCvifHSPI2f9W67SiI_s",
+  },
 };
 
 export default function RootLayout({
