@@ -37,8 +37,8 @@ export function Footer() {
           <span>© {new Date().getFullYear()} Doclyn. Built in public.</span>
           <span>
             Tool designed by IA Perma. For more or upgrades, contact{" "}
-            <a href="https://www.iaperm.com" target="_blank" rel="noopener noreferrer" className="text-signal hover:underline">
-              www.iaperm.com
+            <a href="https://www.iaperma.com" target="_blank" rel="noopener noreferrer" className="text-signal hover:underline">
+              www.iaperma.com
             </a>
           </span>
         </div>
