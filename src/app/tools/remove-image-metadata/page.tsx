@@ -5,8 +5,8 @@ import { Footer } from "@/components/Footer";
 import { RemoveMetadataClient } from "./RemoveMetadataClient";
 
 export const metadata: Metadata = {
-  title: "Remove Image Metadata — Strip EXIF & Location Data",
-  description: "Strip EXIF, GPS location, and camera data from a photo before you share it. Runs entirely in your browser.",
+  title: "Remove EXIF Data From Photos — Free Online",
+  description: "Strip EXIF, GPS location, and camera data from a photo online free, before you share it. No signup — runs in your browser.",
   alternates: { canonical: "/tools/remove-image-metadata" },
 };
 

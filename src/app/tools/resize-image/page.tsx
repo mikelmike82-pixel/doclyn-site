@@ -5,8 +5,8 @@ import { Footer } from "@/components/Footer";
 import { ResizeImageClient } from "./ResizeImageClient";
 
 export const metadata: Metadata = {
-  title: "Resize Image — Change Image Dimensions Online",
-  description: "Resize a JPG, PNG, or WebP to an exact width and height, right in your browser.",
+  title: "Resize Image Online Free — Change Dimensions",
+  description: "Resize a JPG, PNG, or WebP to an exact width and height, free online. No signup, no watermark — runs in your browser.",
   alternates: { canonical: "/tools/resize-image" },
 };
 

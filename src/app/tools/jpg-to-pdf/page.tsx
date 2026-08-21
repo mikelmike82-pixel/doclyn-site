@@ -5,8 +5,8 @@ import { Footer } from "@/components/Footer";
 import { JpgToPdfClient } from "./JpgToPdfClient";
 
 export const metadata: Metadata = {
-  title: "JPG to PDF — Convert Images to a PDF Online",
-  description: "Turn one or more JPG, PNG, or WebP images into a single PDF, one page per image. Runs entirely in your browser.",
+  title: "JPG to PDF Converter — Free, No Signup",
+  description: "Convert JPG, PNG, or WebP images to PDF free online — one page per image, no signup, no watermark. Runs right in your browser.",
   alternates: { canonical: "/tools/jpg-to-pdf" },
 };
 

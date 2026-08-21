@@ -5,8 +5,8 @@ import { Footer } from "@/components/Footer";
 import { SplitPdfClient } from "./SplitPdfClient";
 
 export const metadata: Metadata = {
-  title: "Split PDF — Extract or Delete Pages From a PDF Online",
-  description: "Keep specific pages, or delete specific pages — either way, out in your browser. No upload, no signup.",
+  title: "Split PDF Online Free — Extract or Delete Pages",
+  description: "Split a PDF online free — keep the pages you need or delete the ones you don't. No signup, runs entirely in your browser.",
   alternates: { canonical: "/tools/split-pdf" },
 };
 

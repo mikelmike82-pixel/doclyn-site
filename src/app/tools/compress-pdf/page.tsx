@@ -5,8 +5,8 @@ import { Footer } from "@/components/Footer";
 import { CompressPdfClient } from "./CompressPdfClient";
 
 export const metadata: Metadata = {
-  title: "Compress PDF — Reduce PDF File Size Online",
-  description: "Shrink a PDF right in your browser by recompressing each page. Best for scanned documents and image-heavy PDFs.",
+  title: "Compress PDF Online Free — Reduce File Size",
+  description: "Compress PDF files online free by recompressing each page — best for scans and image-heavy PDFs. No signup, runs in your browser.",
   alternates: { canonical: "/tools/compress-pdf" },
 };
 

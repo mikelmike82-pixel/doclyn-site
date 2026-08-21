@@ -5,8 +5,8 @@ import { Footer } from "@/components/Footer";
 import { PdfToJpgClient } from "./PdfToJpgClient";
 
 export const metadata: Metadata = {
-  title: "PDF to JPG — Export PDF Pages as Images",
-  description: "Turn every page of a PDF into its own JPG image, right in your browser.",
+  title: "PDF to JPG Converter — Free Online, No Signup",
+  description: "Convert every page of a PDF to a JPG image, free online. No signup, no upload — runs entirely in your browser.",
   alternates: { canonical: "/tools/pdf-to-jpg" },
 };
 

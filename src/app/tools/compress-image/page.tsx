@@ -5,9 +5,9 @@ import { Footer } from "@/components/Footer";
 import { CompressImageClient } from "./CompressImageClient";
 
 export const metadata: Metadata = {
-  title: "Compress Image — Shrink JPG, PNG or WebP Online",
+  title: "Compress Image Online Free — Shrink JPG, PNG, WebP",
   description:
-    "Compress an image right in your browser. No upload, no signup, no watermark — drag in a JPG, PNG, or WebP and download a smaller file in seconds.",
+    "Compress a JPG, PNG, or WebP online free — no signup, no watermark, no upload. Runs in your browser and shrinks the file in seconds.",
   alternates: { canonical: "/tools/compress-image" },
 };
 

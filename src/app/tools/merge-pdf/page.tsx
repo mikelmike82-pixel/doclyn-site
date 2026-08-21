@@ -5,8 +5,8 @@ import { Footer } from "@/components/Footer";
 import { MergePdfClient } from "./MergePdfClient";
 
 export const metadata: Metadata = {
-  title: "Merge PDF — Combine PDF Files Online",
-  description: "Combine multiple PDFs into one file, in the order you choose. Runs entirely in your browser — no upload, no signup.",
+  title: "Merge PDF Online Free — Combine PDF Files",
+  description: "Merge PDF files online free, in any order you choose. No signup, no upload, no watermark — combines your PDFs right in your browser.",
   alternates: { canonical: "/tools/merge-pdf" },
 };
 
