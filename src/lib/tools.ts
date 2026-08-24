@@ -77,6 +77,31 @@ export const tools: ToolDefinition[] = [
     clientSide: true,
   },
   {
+    // Extracts the real text from the PDF and lays it out as paragraphs in
+    // a genuine, editable .docx — it does not reconstruct tables, images,
+    // or exact layout. That honest limit is explained on the tool page,
+    // not glossed over.
+    slug: "pdf-to-word",
+    name: "PDF to Word",
+    category: "pdf",
+    shortDescription: "Extract a PDF's text into an editable Word document.",
+    keywords: ["pdf to word", "pdf to docx", "convert", "pdf", "word", "docx", "editable"],
+    status: "live",
+    clientSide: true,
+  },
+  {
+    // Renders the .docx as HTML, then captures it as an image sliced across
+    // PDF pages — looks and prints right, but (like Compress PDF) the text
+    // ends up as a picture of text rather than selectable/searchable text.
+    slug: "word-to-pdf",
+    name: "Word to PDF",
+    category: "pdf",
+    shortDescription: "Convert a Word document (.docx) to PDF.",
+    keywords: ["word to pdf", "docx to pdf", "convert", "pdf", "word", "docx"],
+    status: "live",
+    clientSide: true,
+  },
+  {
     slug: "resize-image",
     name: "Resize Image",
     category: "image",
