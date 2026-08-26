@@ -74,6 +74,7 @@ export default function CompressImagePage() {
             <Link href="/tools/resize-image" className="rounded-full border border-line px-3 py-1.5 text-muted hover:border-signal hover:text-ink">Resize Image</Link>
             <Link href="/tools/jpg-to-pdf" className="rounded-full border border-line px-3 py-1.5 text-muted hover:border-signal hover:text-ink">JPG to PDF</Link>
             <Link href="/tools/remove-image-metadata" className="rounded-full border border-line px-3 py-1.5 text-muted hover:border-signal hover:text-ink">Remove Image Metadata</Link>
+            <Link href="/tools/image-enhancer" className="rounded-full border border-line px-3 py-1.5 text-muted hover:border-signal hover:text-ink">Image Enhancer</Link>
           </div>
         </section>
       </main>

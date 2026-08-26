@@ -6,14 +6,28 @@ interface ResultCardProps {
   fileName: string;
   downloadUrl: string;
   onReset: () => void;
+  // Optional: pass this only when downloadUrl actually points at an image
+  // blob (compress-image, remove-image-metadata). Compress PDF also uses
+  // this component but produces a PDF, so it must not pass this prop.
+  previewUrl?: string;
 }
 
-export function ResultCard({ originalBytes, newBytes, fileName, downloadUrl, onReset }: ResultCardProps) {
+export function ResultCard({ originalBytes, newBytes, fileName, downloadUrl, onReset, previewUrl }: ResultCardProps) {
   const savedPct = originalBytes > 0 ? Math.max(0, Math.round((1 - newBytes / originalBytes) * 100)) : 0;
 
   return (
     <div className="rounded-lg border border-line bg-surface p-8 text-center shadow-card">
       <p className="text-sm font-medium uppercase tracking-wide text-gain">Done</p>
+      {previewUrl && (
+        <div className="mt-4 flex justify-center">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={previewUrl}
+            alt={`Preview of ${fileName}`}
+            className="max-h-64 w-auto rounded border border-line object-contain"
+          />
+        </div>
+      )}
       <div className="mt-4 flex items-center justify-center gap-4 font-mono">
         <div className="text-right">
           <div className="text-xs text-muted">Original</div>

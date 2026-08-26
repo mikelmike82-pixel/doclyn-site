@@ -135,6 +135,7 @@ export function CompressImageClient() {
           newBytes={result.blob.size}
           fileName={result.fileName}
           downloadUrl={result.url}
+          previewUrl={result.url}
           onReset={handleReset}
         />
 

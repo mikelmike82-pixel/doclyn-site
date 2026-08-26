@@ -36,6 +36,7 @@ export default function RemoveMetadataPage() {
           <div className="mt-3 flex flex-wrap gap-2 text-sm">
             <Link href="/tools/compress-image" className="rounded-full border border-line px-3 py-1.5 text-muted hover:border-signal hover:text-ink">Compress Image</Link>
             <Link href="/tools/resize-image" className="rounded-full border border-line px-3 py-1.5 text-muted hover:border-signal hover:text-ink">Resize Image</Link>
+            <Link href="/tools/image-enhancer" className="rounded-full border border-line px-3 py-1.5 text-muted hover:border-signal hover:text-ink">Image Enhancer</Link>
           </div>
         </section>
       </main>

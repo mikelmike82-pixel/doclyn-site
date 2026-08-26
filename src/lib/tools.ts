@@ -119,6 +119,54 @@ export const tools: ToolDefinition[] = [
     status: "live",
     clientSide: true,
   },
+  {
+    slug: "rotate-pdf",
+    name: "Rotate PDF",
+    category: "pdf",
+    shortDescription: "Rotate every page of a PDF 90, 180, or 270 degrees.",
+    keywords: ["rotate", "turn", "sideways", "orientation", "pdf"],
+    status: "live",
+    clientSide: true,
+  },
+  {
+    slug: "watermark-pdf",
+    name: "Watermark PDF",
+    category: "pdf",
+    shortDescription: "Stamp custom text diagonally across every page.",
+    keywords: ["watermark", "stamp", "confidential", "draft", "brand", "pdf"],
+    status: "live",
+    clientSide: true,
+  },
+  {
+    slug: "add-page-numbers",
+    name: "Add Page Numbers",
+    category: "pdf",
+    shortDescription: "Number every page, with your choice of position and starting number.",
+    keywords: ["page numbers", "number pages", "pagination", "pdf"],
+    status: "live",
+    clientSide: true,
+  },
+  {
+    slug: "crop-pdf",
+    name: "Crop PDF",
+    category: "pdf",
+    shortDescription: "Trim margins evenly from every page with a single slider.",
+    keywords: ["crop", "trim", "margin", "pdf"],
+    status: "live",
+    clientSide: true,
+  },
+  {
+    // Real brightness/contrast/saturation/sharpen adjustments via Canvas —
+    // deliberately not an AI upscaler, which would need a paid model and a
+    // backend. That tradeoff is explained plainly on the tool page.
+    slug: "image-enhancer",
+    name: "Image Enhancer",
+    category: "image",
+    shortDescription: "Adjust brightness, contrast, saturation, and sharpness with a live preview.",
+    keywords: ["enhance", "enhancer", "brightness", "contrast", "sharpen", "saturation", "image", "photo"],
+    status: "live",
+    clientSide: true,
+  },
   // Summarize PDF and Chat with PDF are deliberately not listed yet — both
   // need a server route calling a paid LLM API, which means an API key and
   // a real decision about usage limits and cost. That's a decision for the

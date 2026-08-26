@@ -90,6 +90,7 @@ export function RemoveMetadataClient() {
           newBytes={result.blob.size}
           fileName={result.fileName}
           downloadUrl={result.url}
+          previewUrl={result.url}
           onReset={handleReset}
         />
         <p className="text-center text-xs text-muted">

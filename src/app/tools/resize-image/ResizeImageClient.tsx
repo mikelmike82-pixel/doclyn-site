@@ -126,6 +126,14 @@ export function ResizeImageClient() {
     return (
       <div className="rounded-lg border border-line bg-surface p-8 text-center shadow-card">
         <p className="text-sm font-medium uppercase tracking-wide text-gain">Resized</p>
+        <div className="mt-4 flex justify-center">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={result.url}
+            alt={`Preview of ${result.fileName}`}
+            className="max-h-64 w-auto rounded border border-line object-contain"
+          />
+        </div>
         <p className="mt-3 font-mono text-lg text-ink">
           {result.width} × {result.height}px
         </p>

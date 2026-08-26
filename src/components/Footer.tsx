@@ -14,6 +14,21 @@ export function Footer() {
             <p className="mt-1 max-w-xs">
               File tools that respect your time and your files. No signup for the basics, no watermarks, ever.
             </p>
+            <a
+              href="https://www.producthunt.com/products/doclyn?utm_source=other&utm_medium=social"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-4 inline-flex items-center gap-1.5 rounded-full border border-line px-3 py-1.5 text-xs font-medium text-muted transition hover:border-signal hover:text-ink"
+            >
+              <svg viewBox="0 0 40 40" className="h-4 w-4 text-[#DA552F]" fill="currentColor" aria-hidden="true">
+                <circle cx="20" cy="20" r="20" />
+                <path
+                  d="M21.4 19.2h-4.5v-4.8h4.5a2.4 2.4 0 0 1 0 4.8Zm0-8.4h-8.1v18h3.6v-6h4.5a6 6 0 1 0 0-12Z"
+                  fill="#fff"
+                />
+              </svg>
+              Featured on Product Hunt
+            </a>
           </div>
           <div className="grid grid-cols-2 gap-8">
             <div>
@@ -37,8 +52,8 @@ export function Footer() {
           <span>© {new Date().getFullYear()} Doclyn. Built in public.</span>
           <span>
             Tool designed by IA Perma. For more or upgrades, contact{" "}
-            <a href="https://www.iaperma.com" target="_blank" rel="noopener noreferrer" className="text-signal hover:underline">
-              www.iaperma.com
+            <a href="https://www.iaperm.com" target="_blank" rel="noopener noreferrer" className="text-signal hover:underline">
+              www.iaperm.com
             </a>
           </span>
         </div>

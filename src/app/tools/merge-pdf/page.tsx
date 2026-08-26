@@ -43,6 +43,8 @@ export default function MergePdfPage() {
           <div className="mt-3 flex flex-wrap gap-2 text-sm">
             <Link href="/tools/split-pdf" className="rounded-full border border-line px-3 py-1.5 text-muted hover:border-signal hover:text-ink">Split PDF</Link>
             <Link href="/tools/jpg-to-pdf" className="rounded-full border border-line px-3 py-1.5 text-muted hover:border-signal hover:text-ink">JPG to PDF</Link>
+            <Link href="/tools/rotate-pdf" className="rounded-full border border-line px-3 py-1.5 text-muted hover:border-signal hover:text-ink">Rotate PDF</Link>
+            <Link href="/tools/add-page-numbers" className="rounded-full border border-line px-3 py-1.5 text-muted hover:border-signal hover:text-ink">Add Page Numbers</Link>
           </div>
         </section>
       </main>

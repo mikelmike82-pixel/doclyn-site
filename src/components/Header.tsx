@@ -21,7 +21,7 @@ export function Header() {
           </Link>
         </nav>
         <Link
-          href="/tools/compress-image"
+          href="/#pdf"
           className="focus-ring rounded-full bg-ink px-4 py-2 text-sm font-medium text-white transition hover:bg-signal"
         >
           Open a tool
