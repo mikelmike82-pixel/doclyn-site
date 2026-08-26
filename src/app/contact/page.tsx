@@ -18,7 +18,7 @@ export default function ContactPage() {
           the kind of thing worth telling us about.
         </p>
         <p className="mt-4 text-ink">
-          Email: <a href="mailto:hello@doclyn.me" className="text-signal underline">hello@doclyn.me</a>
+          Email: <a href="mailto:iaperma63@gmail.com" className="text-signal underline">iaperma63@gmail.com</a>
         </p>
       </main>
       <Footer />
