@@ -64,6 +64,7 @@ export default function CompressPdfPage() {
             <Link href="/tools/pdf-to-jpg" className="rounded-full border border-line px-3 py-1.5 text-muted hover:border-signal hover:text-ink">PDF to JPG</Link>
             <Link href="/tools/merge-pdf" className="rounded-full border border-line px-3 py-1.5 text-muted hover:border-signal hover:text-ink">Merge PDF</Link>
             <Link href="/tools/crop-pdf" className="rounded-full border border-line px-3 py-1.5 text-muted hover:border-signal hover:text-ink">Crop PDF</Link>
+            <Link href="/tools/document-compressor" className="rounded-full border border-line px-3 py-1.5 text-muted hover:border-signal hover:text-ink">Document Compressor</Link>
           </div>
         </section>
       </main>

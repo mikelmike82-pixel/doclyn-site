@@ -63,6 +63,7 @@ export default function PdfToWordPage() {
           <div className="mt-3 flex flex-wrap gap-2 text-sm">
             <Link href="/tools/word-to-pdf" className="rounded-full border border-line px-3 py-1.5 text-muted hover:border-signal hover:text-ink">Word to PDF</Link>
             <Link href="/tools/compress-pdf" className="rounded-full border border-line px-3 py-1.5 text-muted hover:border-signal hover:text-ink">Compress PDF</Link>
+            <Link href="/tools/document-compressor" className="rounded-full border border-line px-3 py-1.5 text-muted hover:border-signal hover:text-ink">Document Compressor</Link>
           </div>
         </section>
       </main>

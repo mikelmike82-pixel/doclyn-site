@@ -102,6 +102,20 @@ export const tools: ToolDefinition[] = [
     clientSide: true,
   },
   {
+    // Detects PDF vs. .docx/.xlsx and compresses each the way that actually
+    // fits it: PDFs via the same page-rasterization technique as Compress
+    // PDF; Word/Excel by recompressing embedded JPEG photos and re-zipping
+    // the archive (they're zip files under the hood) — never touching text,
+    // formatting, or formulas. Honest about small savings on text-only files.
+    slug: "document-compressor",
+    name: "Document Compressor",
+    category: "pdf",
+    shortDescription: "Shrink a PDF, Word, or Excel file — each compressed the right way for its format.",
+    keywords: ["document compressor", "compress document", "compress word", "compress excel", "compress docx", "compress xlsx", "reduce file size", "shrink"],
+    status: "live",
+    clientSide: true,
+  },
+  {
     slug: "resize-image",
     name: "Resize Image",
     category: "image",
