@@ -53,7 +53,7 @@ export function Footer() {
           <span>
             Tool designed by IA Perma. For more or upgrades, contact{" "}
             <a href="https://www.iaperma.com" target="_blank" rel="noopener noreferrer" className="text-signal hover:underline">
-              www.iaperm.com
+              www.iaperma.com
             </a>
           </span>
         </div>
