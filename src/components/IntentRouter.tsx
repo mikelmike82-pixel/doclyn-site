@@ -3,11 +3,12 @@
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { matchToolFromPhrase } from "@/lib/tools";
+import { ArrowsPointingInIcon, DocumentIcon, PhotoIcon } from "@heroicons/react/24/outline";
 
 const EXAMPLES = [
-  "Make this image smaller than 100KB",
-  "Turn these photos into one PDF",
-  "Compress a JPG without losing quality",
+  { text: "Make this image smaller than 100KB", icon: ArrowsPointingInIcon },
+  { text: "Turn these photos into one PDF", icon: DocumentIcon },
+  { text: "Compress a JPG without losing quality", icon: PhotoIcon },
 ];
 
 export function IntentRouter() {
@@ -61,12 +62,13 @@ export function IntentRouter() {
       <div className="mt-4 flex flex-wrap gap-2">
         {EXAMPLES.map((example) => (
           <button
-            key={example}
+            key={example.text}
             type="button"
-            onClick={() => setValue(example)}
-            className="focus-ring rounded-full border border-line bg-surface px-3.5 py-1.5 text-xs text-muted transition hover:border-signal hover:text-ink"
+            onClick={() => setValue(example.text)}
+            className="focus-ring flex items-center gap-1.5 rounded-full border border-line bg-surface px-3.5 py-1.5 text-xs text-muted transition hover:border-signal hover:text-ink"
           >
-            {example}
+            <example.icon className="h-3.5 w-3.5 shrink-0 text-signal" strokeWidth={2} />
+            {example.text}
           </button>
         ))}
       </div>
