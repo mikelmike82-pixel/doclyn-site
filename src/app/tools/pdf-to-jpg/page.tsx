@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { FaqJsonLd } from "@/components/FaqJsonLd";
 import { PdfToJpgClient } from "./PdfToJpgClient";
 
 export const metadata: Metadata = {
@@ -10,9 +11,25 @@ export const metadata: Metadata = {
   alternates: { canonical: "/tools/pdf-to-jpg" },
 };
 
+const faqs = [
+  {
+    q: "Do I get one image per page, or one image for the whole PDF?",
+    a: "One JPG per page — a 10-page PDF becomes 10 separate JPG files, downloadable individually.",
+  },
+  {
+    q: "What resolution are the JPGs?",
+    a: "Each page is rendered at a resolution high enough to stay sharp on screen and in most prints — good for sharing, presentations, or pulling a page into another document.",
+  },
+  {
+    q: "Does this work on scanned PDFs too?",
+    a: "Yes — it renders whatever is on the page, whether that's real text or a scanned image, so scanned documents convert the same as any other PDF.",
+  },
+];
+
 export default function PdfToJpgPage() {
   return (
     <>
+      <FaqJsonLd faqs={faqs} />
       <Header />
       <main className="mx-auto max-w-3xl px-6 py-12">
         <nav className="mb-6 text-sm text-muted" aria-label="Breadcrumb">
@@ -23,7 +40,9 @@ export default function PdfToJpgPage() {
 
         <h1 className="font-display text-3xl font-semibold text-ink sm:text-4xl">PDF to JPG</h1>
         <p className="mt-2 max-w-xl text-muted">
-          Upload a PDF and get back a JPG of every page, ready to download individually.
+          Upload a PDF and get back a JPG of every page, ready to download individually. Useful for
+          pulling a slide out of a PDF for a presentation, or turning a certificate into an image to
+          share online.
         </p>
 
         <div className="mt-8">
@@ -31,6 +50,18 @@ export default function PdfToJpgPage() {
         </div>
 
         <section className="mt-16">
+          <h2 className="font-display text-xl font-semibold text-ink">FAQ</h2>
+          <div className="mt-4 space-y-5">
+            {faqs.map((item) => (
+              <div key={item.q}>
+                <h3 className="font-medium text-ink">{item.q}</h3>
+                <p className="mt-1 text-sm text-muted">{item.a}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="mt-10">
           <h2 className="font-display text-xl font-semibold text-ink">Related tools</h2>
           <div className="mt-3 flex flex-wrap gap-2 text-sm">
             <Link href="/tools/jpg-to-pdf" className="rounded-full border border-line px-3 py-1.5 text-muted hover:border-signal hover:text-ink">JPG to PDF</Link>

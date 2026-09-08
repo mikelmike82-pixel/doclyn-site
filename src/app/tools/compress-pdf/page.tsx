@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { FaqJsonLd } from "@/components/FaqJsonLd";
 import { CompressPdfClient } from "./CompressPdfClient";
 
 export const metadata: Metadata = {
@@ -28,6 +29,7 @@ const faqs = [
 export default function CompressPdfPage() {
   return (
     <>
+      <FaqJsonLd faqs={faqs} />
       <Header />
       <main className="mx-auto max-w-3xl px-6 py-12">
         <nav className="mb-6 text-sm text-muted" aria-label="Breadcrumb">
@@ -39,7 +41,8 @@ export default function CompressPdfPage() {
         <h1 className="font-display text-3xl font-semibold text-ink sm:text-4xl">Compress PDF</h1>
         <p className="mt-2 max-w-xl text-muted">
           Best for scanned documents and PDFs full of photos. Each page is recompressed as an
-          image — real savings, with one honest tradeoff below.
+          image — real savings, with one honest tradeoff below. Built for the common case of
+          needing a PDF under an email attachment limit or an online form&apos;s upload cap.
         </p>
 
         <div className="mt-8">

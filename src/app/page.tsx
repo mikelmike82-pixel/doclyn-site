@@ -19,11 +19,11 @@ export default function HomePage() {
           <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-14">
             <div className="text-center lg:text-left">
               <h1 className="font-display text-4xl font-semibold leading-tight text-ink sm:text-5xl">
-                Your files. Simplified.
+                Free PDF &amp; Image Tools — Simplified.
               </h1>
               <p className="mx-auto mt-4 max-w-xl text-lg text-muted lg:mx-0">
-                Compress, convert, and clean up PDFs and images in seconds — all of it without your
-                file ever leaving your device.
+                Compress, merge, convert, and clean up PDFs and images in seconds — all of it free,
+                with no signup, and without your file ever leaving your device.
               </p>
               <div className="mx-auto mt-8 max-w-xl lg:mx-0">
                 <IntentRouter />

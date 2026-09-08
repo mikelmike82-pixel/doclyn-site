@@ -29,15 +29,15 @@ const mono = IBM_Plex_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://doclyn.me"),
   title: {
-    default: "Doclyn — Your files. Simplified.",
+    default: "Doclyn — Free Online PDF & Image Tools, No Signup",
     template: "%s | Doclyn",
   },
   description:
-    "Compress, convert, and clean up PDFs and images in seconds. Fast, private tools that run in your browser — no signup, no watermarks.",
+    "Free online tools to compress, merge, convert, and clean up PDFs and images in seconds. No signup, no uploads — everything runs right in your browser.",
   openGraph: {
-    title: "Doclyn — Your files. Simplified.",
+    title: "Doclyn — Free Online PDF & Image Tools, No Signup",
     description:
-      "Compress, convert, and clean up PDFs and images in seconds. Fast, private tools that run in your browser.",
+      "Free online tools to compress, merge, convert, and clean up PDFs and images in seconds — right in your browser, no signup required.",
     siteName: "Doclyn",
     type: "website",
   },

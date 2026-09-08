@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { FaqJsonLd } from "@/components/FaqJsonLd";
 import { DocumentCompressorClient } from "./DocumentCompressorClient";
 
 export const metadata: Metadata = {
@@ -32,6 +33,7 @@ const faqs = [
 export default function DocumentCompressorPage() {
   return (
     <>
+      <FaqJsonLd faqs={faqs} />
       <Header />
       <main className="mx-auto max-w-3xl px-6 py-12">
         <nav className="mb-6 text-sm text-muted" aria-label="Breadcrumb">
@@ -44,7 +46,8 @@ export default function DocumentCompressorPage() {
         <p className="mt-2 max-w-xl text-muted">
           Drop in a PDF, Word document, or Excel spreadsheet and shrink its file size — each
           format is compressed the right way for what it actually is, not with one fake
-          one-size-fits-all trick.
+          one-size-fits-all trick. Useful when an email attachment limit or upload cap is
+          rejecting your file and you don&apos;t have time to figure out why.
         </p>
 
         <div className="mt-8">

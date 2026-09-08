@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { FaqJsonLd } from "@/components/FaqJsonLd";
 import { PdfToWordClient } from "./PdfToWordClient";
 
 export const metadata: Metadata = {
@@ -28,6 +29,7 @@ const faqs = [
 export default function PdfToWordPage() {
   return (
     <>
+      <FaqJsonLd faqs={faqs} />
       <Header />
       <main className="mx-auto max-w-3xl px-6 py-12">
         <nav className="mb-6 text-sm text-muted" aria-label="Breadcrumb">
@@ -39,7 +41,8 @@ export default function PdfToWordPage() {
         <h1 className="font-display text-3xl font-semibold text-ink sm:text-4xl">PDF to Word</h1>
         <p className="mt-2 max-w-xl text-muted">
           Extracts the real text from your PDF into an editable Word document — plain paragraphs,
-          not a pixel-perfect copy. One honest tradeoff below.
+          not a pixel-perfect copy. One honest tradeoff below. Handy for turning a PDF resume or
+          contract back into something you can actually edit.
         </p>
 
         <div className="mt-8">

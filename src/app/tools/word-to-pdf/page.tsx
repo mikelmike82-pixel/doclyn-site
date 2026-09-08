@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { FaqJsonLd } from "@/components/FaqJsonLd";
 import { WordToPdfClient } from "./WordToPdfClient";
 
 export const metadata: Metadata = {
@@ -28,6 +29,7 @@ const faqs = [
 export default function WordToPdfPage() {
   return (
     <>
+      <FaqJsonLd faqs={faqs} />
       <Header />
       <main className="mx-auto max-w-3xl px-6 py-12">
         <nav className="mb-6 text-sm text-muted" aria-label="Breadcrumb">
@@ -39,7 +41,8 @@ export default function WordToPdfPage() {
         <h1 className="font-display text-3xl font-semibold text-ink sm:text-4xl">Word to PDF</h1>
         <p className="mt-2 max-w-xl text-muted">
           Converts a .docx file to PDF, right in your browser. Looks and prints like the
-          original — one honest tradeoff below.
+          original — one honest tradeoff below. The usual case: turning a finished resume or
+          cover letter into PDF before you email or upload it.
         </p>
 
         <div className="mt-8">
