@@ -27,7 +27,11 @@ const mono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://doclyn.me"),
+  // Vercel's domain config has www.doclyn.me as Production, with the apex
+  // doclyn.me set up as a 308 redirect to it — so www is the real canonical
+  // host. Every relative canonical/OG-image URL on the site resolves
+  // against this, so this one line is what keeps them all correct.
+  metadataBase: new URL("https://www.doclyn.me"),
   title: {
     default: "Doclyn — Free Online PDF & Image Tools, No Signup",
     template: "%s | Doclyn",

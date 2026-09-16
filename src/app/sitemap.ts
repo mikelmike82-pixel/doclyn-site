@@ -2,7 +2,10 @@ import type { MetadataRoute } from "next";
 import { tools } from "@/lib/tools";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = "https://doclyn.me";
+  // www.doclyn.me is the actual Production domain in Vercel (the apex
+  // doclyn.me just 308-redirects to it) — the sitemap should list the real
+  // destination URLs, not ones that immediately redirect.
+  const base = "https://www.doclyn.me";
 
   const staticRoutes: MetadataRoute.Sitemap = [
     { url: base, changeFrequency: "weekly", priority: 1 },

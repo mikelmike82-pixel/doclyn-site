@@ -17,7 +17,7 @@ const websiteJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   name: "Doclyn",
-  url: "https://doclyn.me",
+  url: "https://www.doclyn.me",
   description:
     "Free online tools to compress, merge, convert, and clean up PDFs and images in seconds. No signup, no uploads — everything runs right in your browser.",
 };
