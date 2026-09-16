@@ -40,6 +40,27 @@ export const metadata: Metadata = {
       "Free online tools to compress, merge, convert, and clean up PDFs and images in seconds — right in your browser, no signup required.",
     siteName: "Doclyn",
     type: "website",
+    // Shown as the preview image whenever a Doclyn link is shared — Reddit,
+    // Instagram bio link, iMessage, Slack, etc. Without this, shares render
+    // as a bare link with no visual, which quietly kills click-through.
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Doclyn — Free PDF & Image Tools",
+      },
+    ],
+  },
+  twitter: {
+    // "summary_large_image" renders the full-width preview image instead of
+    // a small square icon — matters wherever a link unfurls Twitter-card
+    // style (X, Discord, many chat apps), not just on X itself.
+    card: "summary_large_image",
+    title: "Doclyn — Free Online PDF & Image Tools, No Signup",
+    description:
+      "Free online tools to compress, merge, convert, and clean up PDFs and images in seconds — right in your browser, no signup required.",
+    images: ["/og-image.png"],
   },
   verification: {
     // Confirms ownership of doclyn.me to Google Search Console — lets Google

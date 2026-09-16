@@ -5,6 +5,7 @@ import { Footer } from "@/components/Footer";
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description: "How Doclyn handles your files and data.",
+  alternates: { canonical: "/privacy" },
 };
 
 export default function PrivacyPage() {

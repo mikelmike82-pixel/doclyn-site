@@ -5,6 +5,7 @@ import { Footer } from "@/components/Footer";
 export const metadata: Metadata = {
   title: "Contact",
   description: "Get in touch with the Doclyn team.",
+  alternates: { canonical: "/contact" },
 };
 
 export default function ContactPage() {

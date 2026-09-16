@@ -1,9 +1,26 @@
+import type { Metadata } from "next";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { IntentRouter } from "@/components/IntentRouter";
 import { ToolCard } from "@/components/ToolCard";
 import { HeroVisual } from "@/components/HeroVisual";
 import { getToolsByCategory } from "@/lib/tools";
+
+// Without this, the homepage had no canonical tag at all (it inherited
+// nothing from the root layout) — a real gap, since every tool page has
+// one but the homepage itself didn't.
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
+
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "Doclyn",
+  url: "https://doclyn.me",
+  description:
+    "Free online tools to compress, merge, convert, and clean up PDFs and images in seconds. No signup, no uploads — everything runs right in your browser.",
+};
 
 export default function HomePage() {
   const pdfTools = getToolsByCategory("pdf");
@@ -12,6 +29,11 @@ export default function HomePage() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        // eslint-disable-next-line react/no-danger
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+      />
       <Header />
       <main>
         {/* Hero */}
