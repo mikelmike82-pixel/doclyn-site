@@ -36,6 +36,7 @@ export function Footer() {
               <ul className="space-y-1.5">
                 <li><Link href="/#pdf" className="hover:text-ink">PDF tools</Link></li>
                 <li><Link href="/#image" className="hover:text-ink">Image tools</Link></li>
+                <li><Link href="/blog" className="hover:text-ink">Blog</Link></li>
               </ul>
             </div>
             <div>

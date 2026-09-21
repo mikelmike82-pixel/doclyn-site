@@ -19,6 +19,9 @@ export function Header() {
           <Link href="/#privacy" className="focus-ring rounded hover:text-ink">
             Privacy
           </Link>
+          <Link href="/blog" className="focus-ring rounded hover:text-ink">
+            Blog
+          </Link>
         </nav>
         <Link
           href="/#pdf"
