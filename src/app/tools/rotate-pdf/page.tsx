@@ -24,6 +24,10 @@ const faqs = [
     q: "Will the rotation stick when I open the file elsewhere?",
     a: "Yes — the rotation is written into the PDF itself, so it opens correctly in any PDF viewer, not just in a browser.",
   },
+  {
+    q: "Is this the same as \"flip PDF\"?",
+    a: "Usually, yes — most people who search \"flip a PDF\" actually mean turning a sideways or upside-down page the right way up, which is exactly what this tool does. (A true mirror-image flip is a different effect and isn't what this tool does.)",
+  },
 ];
 
 export default function RotatePdfPage() {
@@ -40,9 +44,9 @@ export default function RotatePdfPage() {
 
         <h1 className="font-display text-3xl font-semibold text-ink sm:text-4xl">Rotate PDF</h1>
         <p className="mt-2 max-w-xl text-muted">
-          Fix pages that scanned in sideways or upside down. Pick a direction, and every page in
-          the file rotates together. Common after scanning a stack of paper through a document
-          feeder that flips half the pages.
+          Fix pages that scanned in sideways or upside down — sometimes called flipping a PDF
+          the right way up. Pick a direction, and every page in the file rotates together. Common
+          after scanning a stack of paper through a document feeder that flips half the pages.
         </p>
 
         <div className="mt-8">

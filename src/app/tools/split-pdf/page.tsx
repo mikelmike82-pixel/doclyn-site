@@ -24,6 +24,10 @@ const faqs = [
     q: "Will splitting affect the quality of my pages?",
     a: "No — pages are copied exactly as they are in the original file; nothing is re-rendered or recompressed.",
   },
+  {
+    q: "Is this the same as \"unmerge PDF\"?",
+    a: "Yes — splitting a PDF back into separate files is often called unmerging it, especially when the pages were combined with a merge tool in the first place. This tool does that: pick the pages you want and save them out as their own PDF.",
+  },
 ];
 
 export default function SplitPdfPage() {
@@ -42,7 +46,8 @@ export default function SplitPdfPage() {
         <p className="mt-2 max-w-xl text-muted">
           Upload a PDF, then either keep only the pages you pick or delete the pages you pick —
           whichever is faster for what you&apos;re doing. Useful for pulling one page out of a long
-          PDF to send separately, or splitting a scanned document by chapter.
+          PDF to send separately, unmerging pages that were previously combined, or splitting a
+          scanned document by chapter.
         </p>
 
         <div className="mt-8">

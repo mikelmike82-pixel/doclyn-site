@@ -21,6 +21,15 @@ export const blogPosts: BlogPost[] = [
       "\"Losing quality\" almost never means what people assume it means. Here's what's actually happening inside a PDF when it shrinks — and how to keep it looking identical.",
     date: "2026-09-21",
   },
+  {
+    slug: "how-to-rotate-a-pdf-online",
+    title: "How to Rotate a PDF Online (Without Installing Anything)",
+    description:
+      "A sideways or upside-down PDF is almost always a scanning problem, not a file problem. Here's how to fix it online, free, in a browser tab.",
+    excerpt:
+      "Sideways pages after a scan are one of the most common small annoyances with PDFs — and one of the fastest to fix, if you know what's actually going on.",
+    date: "2026-09-25",
+  },
 ];
 
 export function getAllBlogPosts(): BlogPost[] {
