@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { UploadZone } from "@/components/UploadZone";
 import { SimpleResultCard } from "@/components/SimpleResultCard";
+import { PdfPagePreview } from "@/components/PdfPagePreview";
 
 interface Result {
   url: string;
@@ -76,6 +77,7 @@ async function convertPdfToWord(file: File): Promise<Blob> {
 }
 
 export function PdfToWordClient() {
+  const [sourceFile, setSourceFile] = useState<File | null>(null);
   const [status, setStatus] = useState<"idle" | "processing" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [result, setResult] = useState<Result | null>(null);
@@ -88,6 +90,7 @@ export function PdfToWordClient() {
       setErrorMessage("That doesn't look like a PDF.");
       return;
     }
+    setSourceFile(file);
     setStatus("processing");
     setErrorMessage(null);
     try {
@@ -103,6 +106,7 @@ export function PdfToWordClient() {
 
   function handleReset() {
     if (result) URL.revokeObjectURL(result.url);
+    setSourceFile(null);
     setResult(null);
     setStatus("idle");
     setErrorMessage(null);
@@ -110,14 +114,30 @@ export function PdfToWordClient() {
 
   if (result) {
     return (
-      <SimpleResultCard
-        title="Ready"
-        fileName={result.fileName}
-        fileSize={result.size}
-        downloadUrl={result.url}
-        onReset={handleReset}
-        resetLabel="Convert another PDF"
-      />
+      <div className="space-y-4">
+        {sourceFile && (
+          <div className="rounded-lg border border-line bg-surface p-4">
+            <p className="text-center text-xs font-medium uppercase tracking-wide text-muted">
+              The PDF you converted — confirm it's the right one
+            </p>
+            <div className="mt-2 flex justify-center">
+              <PdfPagePreview
+                file={sourceFile}
+                label={`Preview of the first page of ${sourceFile.name}`}
+                className="max-h-64 w-full rounded border border-line bg-canvas object-contain"
+              />
+            </div>
+          </div>
+        )}
+        <SimpleResultCard
+          title="Ready"
+          fileName={result.fileName}
+          fileSize={result.size}
+          downloadUrl={result.url}
+          onReset={handleReset}
+          resetLabel="Convert another PDF"
+        />
+      </div>
     );
   }
 

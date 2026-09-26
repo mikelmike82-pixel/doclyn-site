@@ -125,7 +125,7 @@ export function JpgToPdfClient() {
         multiple
         onFiles={addFiles}
       />
-      <PickedFileList files={files} onRemove={removeFile} onReorder={reorderFiles} />
+      <PickedFileList files={files} onRemove={removeFile} onReorder={reorderFiles} previewType="image" />
 
       {files.length > 0 && (
         <button

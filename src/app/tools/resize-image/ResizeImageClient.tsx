@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { UploadZone } from "@/components/UploadZone";
+import { ImagePreview } from "@/components/ImagePreview";
 import { formatBytes } from "@/lib/formatBytes";
 
 interface Loaded {
@@ -165,6 +166,14 @@ export function ResizeImageClient() {
           <p className="text-sm text-muted">
             {loaded.file.name} — original {loaded.naturalWidth} × {loaded.naturalHeight}px
           </p>
+
+          <div className="mt-4 flex justify-center">
+            <ImagePreview
+              file={loaded.file}
+              alt={`Preview of ${loaded.file.name}`}
+              className="max-h-56 w-auto rounded border border-line object-contain"
+            />
+          </div>
 
           <div className="mt-4 flex items-end gap-3">
             <div>

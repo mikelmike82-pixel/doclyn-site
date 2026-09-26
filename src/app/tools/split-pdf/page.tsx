@@ -47,7 +47,8 @@ export default function SplitPdfPage() {
           Upload a PDF, then either keep only the pages you pick or delete the pages you pick —
           whichever is faster for what you&apos;re doing. Useful for pulling one page out of a long
           PDF to send separately, unmerging pages that were previously combined, or splitting a
-          scanned document by chapter.
+          scanned document by chapter. A preview of the first page appears right after you upload
+          it, so you know it's the right file.
         </p>
 
         <div className="mt-8">

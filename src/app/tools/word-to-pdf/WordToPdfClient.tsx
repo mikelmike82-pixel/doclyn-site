@@ -3,11 +3,13 @@
 import { useState } from "react";
 import { UploadZone } from "@/components/UploadZone";
 import { SimpleResultCard } from "@/components/SimpleResultCard";
+import { PdfPagePreview } from "@/components/PdfPagePreview";
 
 interface Result {
   url: string;
   fileName: string;
   size: number;
+  blob: Blob;
 }
 
 const PAGE_WIDTH_PT = 595.28; // A4 at 72dpi
@@ -89,7 +91,7 @@ export function WordToPdfClient() {
     try {
       const blob = await convertWordToPdf(file);
       const base = file.name.replace(/\.docx$/i, "");
-      setResult({ url: URL.createObjectURL(blob), fileName: `${base}.pdf`, size: blob.size });
+      setResult({ url: URL.createObjectURL(blob), fileName: `${base}.pdf`, size: blob.size, blob });
       setStatus("idle");
     } catch (err) {
       setStatus("error");
@@ -106,14 +108,28 @@ export function WordToPdfClient() {
 
   if (result) {
     return (
-      <SimpleResultCard
-        title="Ready"
-        fileName={result.fileName}
-        fileSize={result.size}
-        downloadUrl={result.url}
-        onReset={handleReset}
-        resetLabel="Convert another document"
-      />
+      <div className="space-y-4">
+        <div className="rounded-lg border border-line bg-surface p-4">
+          <p className="text-center text-xs font-medium uppercase tracking-wide text-muted">
+            Preview — check it looks right before downloading
+          </p>
+          <div className="mt-2 flex justify-center">
+            <PdfPagePreview
+              file={result.blob}
+              label="Preview of the converted PDF's first page"
+              className="max-h-72 w-full rounded border border-line bg-canvas object-contain"
+            />
+          </div>
+        </div>
+        <SimpleResultCard
+          title="Ready"
+          fileName={result.fileName}
+          fileSize={result.size}
+          downloadUrl={result.url}
+          onReset={handleReset}
+          resetLabel="Convert another document"
+        />
+      </div>
     );
   }
 

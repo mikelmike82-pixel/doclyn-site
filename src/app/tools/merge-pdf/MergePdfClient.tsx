@@ -101,7 +101,7 @@ export function MergePdfClient() {
         multiple
         onFiles={addFiles}
       />
-      <PickedFileList files={files} onRemove={removeFile} onReorder={reorderFiles} />
+      <PickedFileList files={files} onRemove={removeFile} onReorder={reorderFiles} previewType="pdf" />
 
       {files.length > 0 && (
         <button

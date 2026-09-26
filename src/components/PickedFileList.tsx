@@ -1,14 +1,20 @@
 "use client";
 
 import { formatBytes } from "@/lib/formatBytes";
+import { ImagePreview } from "./ImagePreview";
+import { PdfPagePreview } from "./PdfPagePreview";
 
 interface PickedFileListProps {
   files: File[];
   onRemove: (index: number) => void;
   onReorder?: (from: number, to: number) => void;
+  // When set, shows a small thumbnail per file so you can confirm what
+  // you picked before running the tool — an actual image thumbnail for
+  // "image", or a page-1 render for "pdf".
+  previewType?: "image" | "pdf";
 }
 
-export function PickedFileList({ files, onRemove, onReorder }: PickedFileListProps) {
+export function PickedFileList({ files, onRemove, onReorder, previewType }: PickedFileListProps) {
   if (files.length === 0) return null;
 
   return (
@@ -35,6 +41,20 @@ export function PickedFileList({ files, onRemove, onReorder }: PickedFileListPro
               >
                 ▼
               </button>
+            </div>
+          )}
+          {previewType && (
+            <div className="h-12 w-12 shrink-0 overflow-hidden rounded border border-line bg-canvas">
+              {previewType === "image" ? (
+                <ImagePreview file={file} alt={`Preview of ${file.name}`} className="h-full w-full object-cover" />
+              ) : (
+                <PdfPagePreview
+                  file={file}
+                  scale={0.15}
+                  label={`Preview of ${file.name}`}
+                  className="h-full w-full object-cover text-[9px] leading-tight"
+                />
+              )}
             </div>
           )}
           <div className="min-w-0 flex-1">

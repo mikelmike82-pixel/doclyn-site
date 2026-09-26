@@ -46,7 +46,8 @@ export default function RotatePdfPage() {
         <p className="mt-2 max-w-xl text-muted">
           Fix pages that scanned in sideways or upside down — sometimes called flipping a PDF
           the right way up. Pick a direction, and every page in the file rotates together. Common
-          after scanning a stack of paper through a document feeder that flips half the pages.
+          after scanning a stack of paper through a document feeder that flips half the pages. A
+          live preview spins along with your choice, so you can see it's right before saving.
         </p>
 
         <div className="mt-8">

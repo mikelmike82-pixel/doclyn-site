@@ -4,6 +4,7 @@ import { useState } from "react";
 import { PDFDocument } from "pdf-lib";
 import { UploadZone } from "@/components/UploadZone";
 import { ResultCard } from "@/components/ResultCard";
+import { PdfPagePreview } from "@/components/PdfPagePreview";
 
 type Kind = "pdf" | "docx" | "xlsx";
 
@@ -214,6 +215,20 @@ export function DocumentCompressorClient() {
   if (result && file) {
     return (
       <div className="space-y-4">
+        {kind === "pdf" && (
+          <div className="rounded-lg border border-line bg-surface p-4">
+            <p className="text-center text-xs font-medium uppercase tracking-wide text-muted">
+              Preview — check it looks right before downloading
+            </p>
+            <div className="mt-2 flex justify-center">
+              <PdfPagePreview
+                file={result.blob}
+                label="Preview of the compressed file's first page"
+                className="max-h-72 w-full rounded border border-line bg-canvas object-contain"
+              />
+            </div>
+          </div>
+        )}
         <ResultCard
           originalBytes={file.size}
           newBytes={result.blob.size}

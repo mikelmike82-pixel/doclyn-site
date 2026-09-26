@@ -4,6 +4,7 @@ import { useState } from "react";
 import { PDFDocument, degrees } from "pdf-lib";
 import { UploadZone } from "@/components/UploadZone";
 import { SimpleResultCard } from "@/components/SimpleResultCard";
+import { PdfPagePreview } from "@/components/PdfPagePreview";
 
 interface Result {
   url: string;
@@ -93,6 +94,15 @@ export function RotatePdfClient() {
         <div className="rounded-lg border border-line bg-surface p-5">
           <p className="text-sm font-medium text-ink">{file.name}</p>
           <p className="text-xs text-muted">{pageCount} pages — rotation applies to every page</p>
+
+          <div className="mt-4 flex justify-center">
+            <PdfPagePreview
+              file={file}
+              label={`Preview of the first page of ${file.name}, rotated ${rotation}°`}
+              className="max-h-64 w-full rounded border border-line bg-canvas object-contain"
+              style={{ transform: `rotate(${rotation}deg)` }}
+            />
+          </div>
 
           <div className="mt-4 grid grid-cols-3 gap-2">
             {[

@@ -4,6 +4,7 @@ import { useState } from "react";
 import { PDFDocument } from "pdf-lib";
 import { UploadZone } from "@/components/UploadZone";
 import { SimpleResultCard } from "@/components/SimpleResultCard";
+import { PdfPagePreview } from "@/components/PdfPagePreview";
 
 interface Result {
   url: string;
@@ -100,6 +101,15 @@ export function CropPdfClient() {
           <p className="text-xs text-muted">
             Page size {Math.round(pageSize.width)} × {Math.round(pageSize.height)}pt — margin trims evenly from all four sides
           </p>
+
+          <div className="mt-4 flex justify-center">
+            <PdfPagePreview
+              file={file}
+              label={`Preview of the first page of ${file.name}`}
+              className="max-h-56 w-full rounded border border-line bg-canvas object-contain"
+              style={{ padding: `${Math.min(margin, 40)}px` }}
+            />
+          </div>
 
           <div className="mt-4 flex items-center justify-between text-sm">
             <label htmlFor="margin" className="font-medium text-ink">Trim margin</label>

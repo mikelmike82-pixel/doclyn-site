@@ -3,6 +3,8 @@
 import { useState } from "react";
 import { UploadZone } from "@/components/UploadZone";
 import { ResultCard } from "@/components/ResultCard";
+import { ImagePreview } from "@/components/ImagePreview";
+import { formatBytes } from "@/lib/formatBytes";
 
 interface Result {
   blob: Blob;
@@ -101,6 +103,29 @@ export function RemoveMetadataClient() {
     );
   }
 
+  if (file && !result) {
+    return (
+      <div className="space-y-4">
+        <div className="rounded-lg border border-line bg-surface p-6 text-center">
+          <div className="flex justify-center">
+            <ImagePreview
+              file={file}
+              alt={`Preview of ${file.name}`}
+              className="max-h-64 w-auto rounded border border-line object-contain"
+            />
+          </div>
+          <p className="mt-3 text-sm text-muted">{file.name} — {formatBytes(file.size)}</p>
+        </div>
+        {status === "processing" && <p className="text-center text-sm text-muted">Removing metadata…</p>}
+        {status === "error" && errorMessage && (
+          <p className="text-center text-sm text-red-600" role="alert">
+            {errorMessage}
+          </p>
+        )}
+      </div>
+    );
+  }
+
   return (
     <div className="space-y-4">
       <UploadZone
@@ -109,7 +134,6 @@ export function RemoveMetadataClient() {
         hint="or click to choose a file — JPG, PNG, or WebP"
         onFiles={handleFiles}
       />
-      {status === "processing" && <p className="text-center text-sm text-muted">Removing metadata…</p>}
       {status === "error" && errorMessage && (
         <p className="text-center text-sm text-red-600" role="alert">
           {errorMessage}

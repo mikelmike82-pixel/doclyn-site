@@ -4,6 +4,7 @@ import { useState } from "react";
 import { PDFDocument, StandardFonts, rgb, degrees } from "pdf-lib";
 import { UploadZone } from "@/components/UploadZone";
 import { SimpleResultCard } from "@/components/SimpleResultCard";
+import { PdfPagePreview } from "@/components/PdfPagePreview";
 
 interface Result {
   url: string;
@@ -106,6 +107,14 @@ export function WatermarkPdfClient() {
         <div className="rounded-lg border border-line bg-surface p-5">
           <p className="text-sm font-medium text-ink">{file.name}</p>
           <p className="text-xs text-muted">{pageCount} pages</p>
+
+          <div className="mt-4 flex justify-center">
+            <PdfPagePreview
+              file={file}
+              label={`Preview of the first page of ${file.name}`}
+              className="max-h-56 w-full rounded border border-line bg-canvas object-contain"
+            />
+          </div>
 
           <label htmlFor="watermark-text" className="mt-4 block text-sm font-medium text-ink">
             Watermark text

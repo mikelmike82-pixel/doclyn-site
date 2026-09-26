@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { FaqJsonLd } from "@/components/FaqJsonLd";
 import { CompressImageClient } from "./CompressImageClient";
 
 export const metadata: Metadata = {
@@ -30,7 +29,6 @@ const faqs = [
 export default function CompressImagePage() {
   return (
     <>
-      <FaqJsonLd faqs={faqs} />
       <Header />
       <main className="mx-auto max-w-3xl px-6 py-12">
         <nav className="mb-6 text-sm text-muted" aria-label="Breadcrumb">
@@ -42,8 +40,8 @@ export default function CompressImagePage() {
         <h1 className="font-display text-3xl font-semibold text-ink sm:text-4xl">Compress Image</h1>
         <p className="mt-2 max-w-xl text-muted">
           Drop in a JPG, PNG, or WebP. We&apos;ll shrink it right here in your browser — nothing is
-          uploaded. Built for the common frustration of a form or upload box rejecting a photo for
-          being too large — dial it down to under 100KB or whatever limit you&apos;re fighting.
+          uploaded. You&apos;ll see a before-and-after preview once it's done, so you can check the
+          quality before downloading.
         </p>
 
         <div className="mt-8">
