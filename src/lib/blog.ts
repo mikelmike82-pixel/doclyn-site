@@ -30,6 +30,15 @@ export const blogPosts: BlogPost[] = [
       "Sideways pages after a scan are one of the most common small annoyances with PDFs — and one of the fastest to fix, if you know what's actually going on.",
     date: "2026-09-25",
   },
+  {
+    slug: "how-to-crop-or-trim-a-pdfs-margins",
+    title: "How to Crop or Trim a PDF's Margins Online",
+    description:
+      "Whether you call it cropping or trimming, shrinking a PDF's white space is a one-slider fix — here's what it actually changes and when to use it.",
+    excerpt:
+      "\"Crop\" and \"trim\" mean the same thing on a PDF — cutting down the visible margin without touching the content underneath. Here's how it actually works.",
+    date: "2026-09-28",
+  },
 ];
 
 export function getAllBlogPosts(): BlogPost[] {
