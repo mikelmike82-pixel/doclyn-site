@@ -36,24 +36,16 @@ export default function HomePage() {
       />
       <Header />
       <main>
-        {/* Hero */}
-        <section className="mx-auto max-w-6xl px-6 pb-16 pt-20 sm:pt-28">
-          <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-14">
-            <div className="text-center lg:text-left">
-              <h1 className="font-display text-4xl font-semibold leading-tight text-ink sm:text-5xl">
-                Free PDF &amp; Image Tools — Simplified.
-              </h1>
-              <p className="mx-auto mt-4 max-w-xl text-lg text-muted lg:mx-0">
-                Compress, merge, convert, and clean up PDFs and images in seconds — all of it free,
-                with no signup, and without your file ever leaving your device.
-              </p>
-              <div className="mx-auto mt-8 max-w-xl lg:mx-0">
-                <IntentRouter />
-              </div>
-            </div>
-            <div className="flex justify-center lg:justify-end">
-              <HeroVisual />
-            </div>
+        {/* Compact hero — just the H1 and search bar, so the tool grid below
+            is visible almost immediately. The fuller visual pitch (laptop
+            mockup, long description) lives further down the page instead of
+            gating access to the tools people actually came here for. */}
+        <section className="mx-auto max-w-3xl px-6 pb-10 pt-14 text-center sm:pt-16">
+          <h1 className="font-display text-3xl font-semibold leading-tight text-ink sm:text-4xl">
+            Free PDF &amp; Image Tools — Simplified.
+          </h1>
+          <div className="mx-auto mt-6 max-w-xl">
+            <IntentRouter />
           </div>
         </section>
 
@@ -97,6 +89,26 @@ export default function HomePage() {
             </div>
           </section>
         )}
+
+        {/* The fuller visual pitch — moved below the tools themselves, for
+            people scrolling past who want the "why" after they've already
+            seen what's on offer. */}
+        <section className="mx-auto max-w-6xl px-6 py-16">
+          <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-14">
+            <div className="text-center lg:text-left">
+              <h2 className="font-display text-2xl font-semibold text-ink sm:text-3xl">
+                Built to be simple, not just &ldquo;free.&rdquo;
+              </h2>
+              <p className="mx-auto mt-4 max-w-xl text-lg text-muted lg:mx-0">
+                Compress, merge, convert, and clean up PDFs and images in seconds — all of it free,
+                with no signup, and without your file ever leaving your device.
+              </p>
+            </div>
+            <div className="flex justify-center lg:justify-end">
+              <HeroVisual />
+            </div>
+          </div>
+        </section>
 
         {/* Privacy */}
         <section id="privacy" className="border-y border-line bg-surface">
